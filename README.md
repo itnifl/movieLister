@@ -15,5 +15,5 @@ ease of re-use and possible later polymorphism. In generel re-organize the code 
 to something that is more readable and comprehendable.
 
 
-Best regards,
-atle@team-holm.net
+
+/atle@team-holm.net
