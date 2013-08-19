@@ -1,0 +1,284 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'DaysLater';
+    src: url('/movieLister/fonts/daysLater.eot');
+    src: url('/movieLister/fonts/daysLater.eot?#iefix') format('embedded-opentype'),
+         url('/movieLister/fonts/daysLater.woff') format('woff'),
+         url('/movieLister/fonts/daysLater.ttf') format('truetype'),
+         url('/movieLister/fonts/daysLater.svg#28DaysLaterRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+ @font-face {
+    font-family: 'BladeRunner';
+    src: url('/movieLister/fonts/bladrmf_.eot');
+    src: url('/movieLister/fonts/bladrmf_.eot?#iefix') format('embedded-opentype'),
+         url('/movieLister/fonts/bladrmf_.woff') format('woff'),
+         url('/movieLister/fonts/bladrmf_.ttf') format('truetype'),
+         url('/movieLister/fonts/bladrmf_.svg#BladeRunnerMovieFontRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+.movieLinks-red:link {text-decoration: none; color: red; font-family: DaysLater; font-size: 20pt;}
+.movieLinks-red:visited {text-decoration: none; color: red; font-family: DaysLater; font-size: 20pt;}
+.movieLinks-red:active {text-decoration: none; color: red; font-family: DaysLater; font-size: 20pt;}
+.movieLinks-red:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 20pt;}
+
+.movieLinks-red-small:link {text-decoration: none; color: red; font-family: DaysLater; font-size: 14pt;}
+.movieLinks-red-small:visited {text-decoration: none; color: red; font-family: DaysLater; font-size: 14pt;}
+.movieLinks-red-small:active {text-decoration: none; color: red; font-family: DaysLater; font-size: 14pt;}
+.movieLinks-red-small:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 16pt;}
+
+.movieLinks-red-mini:link {text-decoration: none; color: red; font-family: DaysLater; font-size: 11pt;}
+.movieLinks-red-mini:visited {text-decoration: none; color: red; font-family: DaysLater; font-size: 11pt;}
+.movieLinks-red-mini:active {text-decoration: none; color: red; font-family: DaysLater; font-size: 11pt;}
+.movieLinks-red-mini:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 13pt;}
+
+.movieLinks-black:link {text-decoration: none; color: black; font-family: DaysLater; font-size: 20pt;}
+.movieLinks-black:visited {text-decoration: none; color: black; font-family: DaysLater; font-size: 20pt;}
+.movieLinks-black:active {text-decoration: none; color: black; font-family: DaysLater; font-size: 20pt;}
+.movieLinks-black:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 20pt;}
+
+.movieLinks-black-small:link {text-decoration: none; color: black; font-family: DaysLater; font-size: 14pt;}
+.movieLinks-black-small:visited {text-decoration: none; color: black; font-family: DaysLater; font-size: 14pt;}
+.movieLinks-black-small:active {text-decoration: none; color: black; font-family: DaysLater; font-size: 14pt;}
+.movieLinks-black-small:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 16pt;}
+
+.movieLinks-black-mini:link {text-decoration: none; color: black; font-family: DaysLater; font-size: 11pt;}
+.movieLinks-black-mini:visited {text-decoration: none; color: black; font-family: DaysLater; font-size: 11pt;}
+.movieLinks-black-mini:active {text-decoration: none; color: black; font-family: DaysLater; font-size: 11pt;}
+.movieLinks-black-mini:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 13pt;}
+
+.suggestionLinks:link {text-decoration: none; color: black; font-family: DaysLater; font-size: 11pt;}
+.suggestionLinks:visited {text-decoration: none; color: black; font-family: DaysLater; font-size: 11pt;}
+.suggestionLinks:active {text-decoration: none; color: black; font-family: DaysLater; font-size: 11pt;}
+.suggestionLinks:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 11pt;}
+
+.suggestionLinks-medium:link {text-decoration: none; color: black; font-family: DaysLater; font-size: 9pt;}
+.suggestionLinks-medium:visited {text-decoration: none; color: black; font-family: DaysLater; font-size: 9pt;}
+.suggestionLinks-medium:active {text-decoration: none; color: black; font-family: DaysLater; font-size: 9pt;}
+.suggestionLinks-medium:hover {text-decoration: none; color: white; font-family: DaysLater; font-size: 9pt;}
+
+.navigation:link  {text-decoration: none; color: black; font-family: BladeRunner; font-size: 12pt;}
+.navigation:visited  {text-decoration: none; color: black; font-family: BladeRunner; font-size: 12pt;}
+.navigation:active  {text-decoration: none; color: black; font-family: BladeRunner; font-size: 12pt;}
+.navigation:hover  {text-decoration: none; color: red; font-family: BladeRunner; font-size: 12pt;}
+
+.movieHeader {text-decoration: none; color: AntiqueWhite; font-family: BladeRunner; font-size: 32pt;}
+.movieHeader-small {text-decoration: none; color: AntiqueWhite; font-family: BladeRunner; font-size: 22pt;}
+.smallBoxHeader {text-decoration: none; color: black; font-family: BladeRunner; font-size: 11pt;}
+.smallBoxHeader-big {text-decoration: none; color: black; font-family: BladeRunner; font-size: 11pt;}
+.smallBoxHeader-medium {text-decoration: none; color: black; font-family: BladeRunner; font-size: 9pt;}
+.smallBoxHeader-small {text-decoration: none; color: black; font-family: BladeRunner; font-size: 9pt;}
+
+.greyBorder {border:1px solid;border-radius:10px;border-color:silver;}
+.whiteBorder {border:1px solid;border-radius:10px;border-color:white;}
+.blackBorder {border:2px solid;border-color:black;}
+
+input.pageNumberHolder { border: 0.5pt solid #000000; border-collapse: collapse; border-spacing: 0; font-size: 10pt; height: 10pt; margin: 0; padding: 0; space: 0; width: 0.22in; z-index: 1; text-align: center; }
+.plotMessageBox {border:2px solid; border-radius:18px; background-color: Beige; padding-left: 10px; display:none; z-index:5;}
+
+.getFilePath {
+	display: inline-block;
+	text-decoration: none; font-family: DaysLater; font-size: 20pt;
+	width: 30px;
+	height: 30px;
+	background: url('/movieLister/images/getFilePath.png') bottom;
+	text-indent: -99999px;
+}
+.getFilePath:hover {
+	background-position: 0 0;
+	display: inline-block;
+	text-decoration: none; font-family: DaysLater; font-size: 20pt;
+	width: 30px;
+	height: 30px;
+	background: url('/movieLister/images/getFilePathHover.png') bottom;
+}
+.getFilePath-small {
+	display: inline-block;
+	text-decoration: none; font-family: DaysLater; font-size: 14pt;
+	width: 15px;
+	height: 15px;
+	background: url('/movieLister/images/getFilePath-small.png') bottom;
+	text-indent: -99999px;
+}
+.getFilePath-small:hover {
+	background-position: 0 0;
+	display: inline-block;
+	text-decoration: none; font-family: DaysLater; font-size: 14pt;
+	width: 15px;
+	height: 15px;
+	background: url('/movieLister/images/getFilePathHover-small.png') bottom;
+}
+#footer_message {
+	color: #000000; 
+	background-color: Beige; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	layer-background-color: #cccccc; 
+	position: absolute; 
+	right:0%; 
+	bottom:0px; 
+	height: 20px;
+	visibility:hidden; 
+	z-index:5; 
+	border:inherit;
+	border:1px solid;
+	border-color:silver;
+}
+#footer_controlbar {
+	display:none;
+	color: AntiqueWhite; 
+	background-color: #3F3F3F;  
+	position: absolute; 
+	right:0; 
+	width: 99.4%;
+	height: 37px;
+	bottom:16px; 
+	z-index:4; 
+	border:4px solid;
+	border-color: #577171;
+	background: rgba(0, 0, 0, 0.5);
+}
+#footer_controlbar_controller {
+	color: AntiqueWhite; 
+	background-color: White;  
+	position: absolute; 
+	left: 4px;
+	/*width: 100%;*/
+	bottom:13px; 
+	height: 16px;
+	z-index:6; 
+	/*border:4px solid;
+	border-color: #577171;*/
+}
+#bottom_controlbar_controller {
+	/*display:none;*/
+	color: AntiqueWhite; 
+	background-color: White;  
+	position: absolute; 
+	left: 4px;
+	/*width: 100%;*/
+	bottom:33px; 
+	height: 16px;
+	z-index:6; 
+}
+#bottom_controlbar {
+	/*display:none;*/
+	background-color: white;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius:14px;
+}
+#header_showbar {
+	color: AntiqueWhite; 
+	background-color: #3F3F3F;  
+	position: absolute; 
+	width: 99.4%;
+	left:0px;
+	top:0px;
+	z-index:4; 
+	border:4px solid;
+	border-color: #577171;
+}
+.coverInsteadOfTrailer {
+	opacity: .4;
+	-moz-opacity:0.4;
+	-khtml-opacity: 0.4;
+	filter: alpha(opacity=40);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+	border: 1px dotted;
+	border-color: red;
+}
+#playButtonInsteadOfTrailer {
+	opacity: .4;
+	-moz-opacity:0.4;
+	-khtml-opacity: 0.4;
+	filter: alpha(opacity=40);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+#playButtonInsteadOfTrailer:hover {
+	opacity: 1;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);	
+}
+#addMovieButton {
+	opacity: .6;
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	filter: alpha(opacity=60);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+	border: 1px;
+	border-color: grey;
+}
+#addMovieButton:hover {
+	opacity: 1;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);	
+	border: 1px dashed;
+	border-color: red;
+	cursor: pointer;
+}
+#pre_loading {
+	background:url("/movieLister/images/loading.gif") no-repeat center;
+	height: 110px; width: 107px;
+	position: fixed; left: 50%; top: 50%; z-index: 999;
+	margin: -25px 0 0 -25px;
+	border: 4px;
+	background-color: #3F3F3F;
+	border-color: #577171;
+	opacity: 0.7;
+		-moz-opacity:0.7;
+		-khtml-opacity: 0.7;
+	filter:alpha(opacity=70);
+	border-radius:14px;
+	text-align:center;
+	color:white;
+	font-size:x-large;
+}
+#pre_loading_bottom {
+	position: relative; bottom: 0; z-index: 1000;
+	text-align:center;
+	color:white;
+	font-size:medium;
+}
+a.coverInsteadOfTrailerLink span.zoom-playButton{
+  visibility:hidden;
+  position:absolute;
+  left:40%;
+  top:35%;
+  opacity: 0.7;
+  -moz-opacity:0.7;
+  -khtml-opacity: 0.7;
+  filter:alpha(opacity=70);
+  
+}
+.trailerText {
+  visibility:hidden;
+  z-index:3;
+  position:absolute;
+  color: black; 
+  font-family: DaysLater; 
+  font-size: 14pt;
+  opacity: 0.65;
+	-moz-opacity:0.65;
+	-khtml-opacity: 0.65;
+  filter:alpha(opacity=65);
+}
+.trailerTextBig {
+  visibility:hidden;
+  z-index:3;
+  position:absolute;
+  color: black; 
+  font-family: DaysLater; 
+  font-size: 26pt;
+  opacity: 0.65;
+	-moz-opacity:0.65;
+	-khtml-opacity: 0.65;
+  filter:alpha(opacity=65);
+}

@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'DaysLater';
+    src: url('/movieLister/fonts/daysLater.eot');
+    src: url('/movieLister/fonts/daysLater.eot?#iefix') format('embedded-opentype'),
+         url('/movieLister/fonts/daysLater.woff') format('woff'),
+         url('/movieLister/fonts/daysLater.ttf') format('truetype'),
+         url('/movieLister/fonts/daysLater.svg#28DaysLaterRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BladeRunner';
+    src: url('/movieLister/fonts/bladrmf_.eot');
+    src: url('/movieLister/fonts/bladrmf_.eot?#iefix') format('embedded-opentype'),
+         url('/movieLister/fonts/bladrmf_.woff') format('woff'),
+         url('/movieLister/fonts/bladrmf_.ttf') format('truetype'),
+         url('/movieLister/fonts/bladrmf_.svg#BladeRunnerMovieFontRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#load{position: fixed; z-index:1;border:3px double #999; border-radius:10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px; background:#f7f7f7; width:300px; height:170px; margin-top:-90px; margin-left:-150px; left: 50%; top: 29%; text-align:center; font-family:"Trebuchet MS", verdana, arial,tahoma; font-size:14pt;}
+.movieHeader {text-decoration: none; color: #3F3F3F; font-family: BladeRunner; font-size: 24pt;}
+.header { font-family : BladeRunner; font-size : 22pt; color : Black; font-weight : bold; font-style: normal; text-align: center; position:relative;}
+.local_header_showbar {color: #3F3F3F; background-color: #ECECEC; border:4px solid; border-radius:10px; border-color: #DADADA; margin-bottom:12px;}
+#local_bottom_showbar {color: #3F3F3F; background-color: #ECECEC; position: absolute; margin-left:20px; margin-right:20px; bottom:7px; border:4px solid; border-radius:10px; border-color: #DADADA;}
+.spanHeader {text-align:center; font-size: 14pt;}
+.spanRow4Repo {height: 39px; background:#F4F4FF; border-color:#f7f7f7; border-radius:10px; border:1px solid;border-color: #DADADA; text-align:center; font-size: 17pt;font-family: DaysLater;}
+.spanRow4Repo:hover {height: 39px; background:#ECECEC; border-color:#f7f7f7; border-radius:10px; border:1px solid; border-color:#DADADA; text-align:center; font-size: 17pt; font-family:DaysLater;}
+.spanRepoInitialMessage {height: 39px; background:#F4F4FF; border-color:#f7f7f7; border-radius:10px; border:1px solid;border-color: #DADADA; text-align:center; font-size: 17pt;font-family: DaysLater;}
+.spanRepoInitialMessage:hover {height: 39px; background:#ECECEC; border-color:#f7f7f7; border-radius:10px; border:1px solid; border-color:#DADADA; text-align:center; font-size: 17pt; font-family:DaysLater;}
+.spanRow4Comment {font-size:13pt; margin: 0 0; font-family: inherit; font-weight: bold; line-height: 20px; color: inherit; text-rendering: optimizelegibility;}
+.selectedRow4Repo {height: 39px; background:#D0CADD; border-color:#f7f7f7; border-radius:10px; border:1px solid; border-color:#DADADA; text-align:center; font-size: 17pt; font-family:DaysLater;}
+.selectedRow4Repo:hover {height: 39px; background:#F2E8F2; border-color:#f7f7f7; border-radius:10px; border:1px solid; border-color:#DADADA; text-align:center; font-size: 17pt; font-family:DaysLater;}
+.settingsTableHeader {background-color: #ECECEC;}
+.settingsTableFooter {background-color: #ECECEC;}
+.btn-white  {
+	Background:White !important;
+	color:Black !important;
+}
+.btn-white:hover {
+	Background:#F3F3F3 !important;
+	color:Black !important;
+	Border: 0px;
+}
+#lowerRightCornerMessageBox{ position: fixed; bottom: 0; right: 0; display: none; background-color: #F8F8F8; border: 1px solid; border-radius: 8px;}
+#loading {
+	background:url("/movieLister/images/loading.gif") no-repeat center;
+	height: 110px; width: 107px;
+	position: fixed; left: 45%; top: 45%; z-index: 999;
+	margin: -25px 0 0 -25px;
+	border: 4px;
+	background-color: #3F3F3F;
+	border-color: #577171;
+	opacity: 0.7;
+		-moz-opacity:0.7;
+		-khtml-opacity: 0.7;
+	filter:alpha(opacity=70);
+	border-radius:14px;
+	text-align:center;
+	color:white;
+	font-size:x-large;
+}
+#loading_bottom {
+	position: relative; bottom: 0; z-index: 1000;
+	text-align:center;
+	color:white;
+	font-size:medium;
+}
+

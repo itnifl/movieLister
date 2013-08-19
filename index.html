@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html lang="en">
+	<head><title>MovieLister 0.1.0b</title><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/movieLister/js/startPage.js"></script>
+		<script type="text/javascript" src="/movieLister/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/movieLister/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/movieLister/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="/movieLister/css/startPage.css" />
+	<body>
+		<div class="container-fluid">
+			<div class="bs-docs-grid">
+				<div class="row-fluid">
+				  <div class="span12 local_header_showbar">
+					<span class="movieHeader"><center>MovieLister 0.1.0b</center></span>				  
+				  </div>
+				</div>
+				<div class="row-fluid">
+					<!-- Start of header navigation tabs -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+						<li><a href="#settings" data-toggle="tab" id="settingslink">Settings</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="repositoriesLink">Repositories <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#addRepositoryTab" data-toggle="tab">Add Repository</a></li>
+							  <li><a href="#removeRepositoryTab" data-toggle="tab">Remove Repository</a></li>
+							  <li><a href="#showErrorTab" data-toggle="tab" id="modalShowErrorLink">Get last error</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- End of header navigation tabs -->
+					<div class="tab-content">
+					  <div class="tab-pane active" id="home">
+						<div class="row-fluid">
+							<div class="span3 spanHeader">Repositories</div>
+							<div class="span9 spanHeader" style="text-align:left;">Comments</div>
+						</div>
+						<div class="row-fluid" id="initialInitiateMessage">
+							<div class="span3 spanRepoInitialMessage">None added or none detected</div>
+							<div class="span9 spanRow4Comment">Please choose from the menu above to configurate your system.</div>
+						</div><br/>
+						<div id="repositoryRowArea">
+						</div>
+						<br/>
+						<div class="row-fluid" id="homeReloadButtonRow">
+							<div class="span9 spanRow4Comment"></div>
+							<div class="span1 spanRow4Comment"><button class="btn btn-default pull-right" id="refreshRepoButton">Refresh</button></div>
+							<div class="span2 spanRow4Comment"></div>
+						</div>
+					  </div>
+					  <div class="tab-pane" id="settings">					  
+						<div class="panel">
+							<br/>
+							<div class="panel-heading"><h4>Main Configuration settings:<h4></div>
+							<table class="table table-hover" id="MainConfigurationTable">
+								<thead>
+									<tr>
+									  <th>#</th>
+									  <th>Setting</th>
+									  <th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Database User</td>
+									  <td id="dbUserCell" colspan="2"><form action="/movieLister/cgi-bin/movieLister.pl" method="GET" class="form-inline" id="formdbMainUserUpdate"><div class="col-lg-8"><input id="dbUserCellInput" class="form-control" type="text" placeholder="Database user for repository communication"></input></div>&nbsp;&nbsp;&nbsp;<button type="submit" class="btn" id="formdbMainUserUpdateBtn">Set</button></form></td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <td>Password</td>
+									  <td id="dbPasswordCell" colspan="2"><form action="/movieLister/cgi-bin/movieLister.pl" method="GET" class="form-inline" id="formdbMainUserPasswordUpdate"><div class="col-lg-8"><input id="dbPasswordCellInput" class="form-control" type="password" placeholder="Password for database user"></input></div>&nbsp;&nbsp;&nbsp;<button type="submit" class="btn" id="formdbMainUserPasswordUpdateBtn">Set</button></form></td>
+									</tr>
+									<tr>
+									  <td>3</td>
+									  <td>Validate to confirm</td>
+									  <td><form action="/movieLister/cgi-bin/movieLister.pl" method="GET" class="form-inline" id="formdbMainValidateUpdate">&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary" id="formdbValidateUpdateBtn">Validate</button></form></td>
+									  <td><span id="formdbValidateUpdateError" class="well pull-left well-small" style="display:none;margin-top: auto;margin-bottom: auto;"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="formdbValidateUpdateErrorLabel" class="label label-danger" style="display:none;">Danger</span><span id="formdbValidateUpdateSuccessLabel" class="label label-success" style="display:none;">Success!</span></td>
+									</tr>
+								</tbody>
+							</table>
+							<br/><br/>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"><h4>Repository Configuration settings:<h4></div>
+							<table class="table table-hover" id="noRepoTable">
+								<thead>
+									<tr>
+									  <th>#</th>
+									  <th>Setting</th>
+									  <th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									  <td>1</td>
+									  <td>No movie repositories selected.</td>
+									  <td>Start by editing the main configuration above, then add repositories under the repositories tab. Select one under the home tab.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					  </div>
+					  <div class="tab-pane" id="addRepositoryTab">
+						<!-- Modal Start -->
+						  <div class="modal fade" id="modalAddRepository">
+							<div class="modal-dialog">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								  <h3 class="modal-title" id="mdlAddRepLabel">Add Repository</h3>
+								</div>
+								<div class="modal-body">
+								<form name="newRepoForm" action="/movieLister/cgi-bin/movieLister.pl" method="GET" class="form-inline" id="formNewRepo">
+								  <table class="table table-condensed">
+								   <thead class="settingsTableHeader">
+									  <tr>
+										 <th>#</th>
+										 <th>Setting</th>
+										 <th>Value</th>
+									  </tr>
+								   </thead>
+								   <tbody>
+									  <tr>
+									     <td>1</td>
+										 <td><abbr title="States the heading and title of the movie list">listHeading</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" value="Repository X"></input></div></td>
+									  </tr>
+									  <tr>
+										 <td>2</td>
+										 <td><abbr title="Sets the user that the repository uses to talk to the database">dbUser</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="db User Name"></input></div></td>
+									  </tr>
+									  <tr>
+									     <td>3</td>
+										 <td><abbr title="Sets the password for the user that this repository uses to talk to the database">dbPassword</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="db Password"></input></div></td>
+									  </tr>
+									  <tr>
+									     <td>4</td>
+										 <td><abbr title="Sets the username used to connect to TasteKid.com and get recommendations">tasteKidF</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="TasteKid User Name"></input></div></td>
+									  </tr>
+									  <tr>
+									     <td>5</td>
+										 <td><abbr title="Sets the password used to connect to TasteKid.com and get recommendations">tasteKidK</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="TasteKid Password"></input></div></td>
+									  </tr>
+									  <tr>
+									     <td>6</td>
+										 <td><abbr title="Full path to where the symlinks to the movies are placed">moviePlacement</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="/usr/share/movieLister/symlinks/foldername/"></input></div></td>
+									  </tr>
+									  <tr>
+									     <td>7</td>
+										 <td><abbr title="Relative path from /usr/share to where the symlinks to the movies are placed">urlMoviePlacement</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="movieLister/symlinks/foldername/"></input></div></td>
+									  </tr>
+									  <tr>
+									     <td>8</td>
+										 <td><abbr title="Actual path to a folder with the movies that will be symlinked to">hardMoviePlacement</abbr></td>
+										 <td><div class="col-lg-15"><input type="text" class="form-control input-sm" placeholder="/mnt/theMoviesAreHere"></input></div></td>
+									  </tr>
+								   </tbody>
+								   <tfoot class="settingsTableFooter">
+									<tr>
+									  <td colspan="3"><b>#</b></td>
+									</tr>
+								  </tfoot>								  
+								</table>
+								</form>
+								</div>
+								<div class="modal-footer">
+								  <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="modalAddRepositoryBtnClose">Close</a>
+								  <a href="#" class="btn btn-primary" id="createRepoBtn">Create Repository</a>
+								</div>
+							  </div><!-- /.modal-content -->
+							</div><!-- /.modal-dialog -->
+						  </div><!-- /.modal -->
+						<!-- Modal End -->
+					  </div>
+					  <div class="tab-pane" id="removeRepositoryTab">
+						<!-- Modal Start -->				
+						<div class="modal fade" id="modalRemoveRepository">
+							<div class="modal-dialog">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								  <h3 class="modal-title" id="mdlRemoveRepLabel">Remove Repository</h3>
+								</div>
+								<div class="modal-body">
+									<p>Do you want to remove the selected repositories listed below?</p>
+									<span id="repositoryRemoveList">									
+										<ul><li/>No repository selected.</ul>									
+									</span>
+								</div>
+								<div class="modal-footer">
+								  <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="modalRemoveRepositoryBtnClose">Close</a>
+								  <a href="#" class="btn btn-primary" id="modalRemoveRepositoryBtn">Remove</a>
+								</div>
+							  </div><!-- /.modal-content -->
+							</div><!-- /.modal-dialog -->
+						  </div><!-- /.modal -->
+						<!-- Modal End -->
+					  </div>
+					  <div class="tab-pane" id="showErrorTab">
+						<!-- Modal Start -->				
+						<div class="modal fade" id="modalShowError">
+							<div class="modal-dialog">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								  <h3 class="modal-title" id="mdlErroMessageLabel">Warning: Error encountered!</h3>
+								</div>
+								<div class="modal-body">
+									<span id="errorMessage"></span>
+								</div>
+								<div class="modal-footer">
+								  <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="modalShowErrorBtnClose">Close</a>
+								</div>
+							  </div><!-- /.modal-content -->
+							</div><!-- /.modal-dialog -->
+						  </div><!-- /.modal -->
+						<!-- Modal End -->
+					  </div>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<span id="local_bottom_showbar" style="padding:0px;margin:0px;"></span>	
+		<div id="lowerRightCornerMessageBox"></div>
+		<div id="loading" style="display:none;text-align:center;margin:0;padding:0;">Loading..<br/><br/><span id="loading_bottom" style="margin:0;padding:0;">Please wait..</span></div>
+	</body>
+</html>
