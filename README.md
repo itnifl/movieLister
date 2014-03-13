@@ -1,6 +1,8 @@
 movieLister
 ===========
 
+OBS! This code uses mymovieapi.org / imbdpapi.com(http://imdbapi.com/) that is no longer up and running. This code therefore no longer works. See http://imdbapi.com/(http://imdbapi.com/) for more info
+
 A Perl based web system that lists information, gets trailers and covers about movies stored on a hard drive.
 
 For more documentation, how to on installation, information about the system and screenshots:
