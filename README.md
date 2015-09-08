@@ -1,5 +1,6 @@
 movieLister
 ===========
+Be aware! This code is really bad and messy. An attempt to divide the code up from being spaghetti code has been tried. The code is still bad. If you go on to try to wrap your head around this, you will suffer extreme frustration and experience a time consuming waste. You have been warned. The code is kept here for historical purposes, so I can look back at it and wonder.
 
 OBS! This code uses mymovieapi.org / imbdpapi.com(http://imdbapi.com/) that is no longer up and running. This code therefore no longer works. See http://imdbapi.com/ for more info.
 
